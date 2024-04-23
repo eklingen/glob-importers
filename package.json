@@ -1,0 +1,38 @@
+{
+  "name": "@eklingen/glob-importers",
+  "version": "0.0.99",
+  "description": "Plugins to add globbing support to import statements in various environments like Sass, Webpack and ESBuild.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eklingen/glob-importers.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Elco Klingen",
+  "license": "MIT",
+  "homepage": "https://github.com/eklingen/glob-importers#readme",
+  "bugs": {
+    "url": "https://github.com/eklingen/glob-importers/issues"
+  },
+  "keywords": [
+    "glob",
+    "globbing",
+    "import",
+    "imports",
+    "sass",
+    "scss",
+    "webpack",
+    "esbuild"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "CHANGELOG.md"
+  ],
+  "type": "module",
+  "packageManager": "yarn@4.1.1",
+  "dependencies": {
+    "fast-glob": "^3.3.2"
+  }
+}
