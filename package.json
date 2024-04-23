@@ -28,7 +28,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "importers/*.js"
   ],
   "type": "module",
   "packageManager": "yarn@4.1.1",
