@@ -1,7 +1,8 @@
 
 # Glob importers
 
-Plugins to add globbing support to import calls and/or statements in various environments like Sass, Webpack and ESBuild.
+Plugins to add globbing support to import statements in various environments like Sass, Webpack and ESBuild.
+> **TODO**: Add support for detecting import calls as opposed to statements.
 
 ## Usage
 
@@ -40,15 +41,15 @@ plugins: [globImporter()],
 This will enable the following:
 
 ```javascript
-import('components/**/*.js')
+import 'components/**/*.js';
 ```
 
 Will get expanded to, for example (depending on the glob and files present):
 
 ```javascript
-import('components/button/button.js')
-import('components/link/link.js')
-import('components/video/video.js')
+import 'components/button/button.js';
+import 'components/link/link.js';
+import 'components/video/video.js';
 ```
 
 ### For `webpack`
@@ -73,15 +74,15 @@ Add an extra prority rule to the rules in `webpack.config.js`:
 This will enable the following:
 
 ```javascript
-import('components/**/*.js')
+import 'components/**/*.js';
 ```
 
 Will get expanded to, for example (depending on the glob and files present):
 
 ```javascript
-import('components/button/button.js')
-import('components/link/link.js')
-import('components/video/video.js')
+import 'components/button/button.js';
+import 'components/link/link.js';
+import 'components/video/video.js';
 ```
 
 ## Dependencies

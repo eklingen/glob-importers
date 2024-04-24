@@ -10,7 +10,7 @@ const onResolveHandler = ({ path, namespace, resolveDir, kind }) => {
 
 const onLoadHandler = async args => {
   const files = (await glob(args.path, { cwd: args.pluginData.resolveDir })).sort().sort((a, b) => a.localeCompare(b))
-  const contents = files.map(module => `import('${module}');\n`).join('')
+  const contents = files.map(module => `import '${module}';\n`).join('')
 
   return { contents, resolveDir: args.pluginData.resolveDir }
 }
