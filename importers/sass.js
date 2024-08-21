@@ -1,15 +1,15 @@
-import { join, resolve as resolvePath } from 'node:path'
+import { join as joinPath, resolve as resolvePath } from 'node:path'
 
 import glob from 'fast-glob'
 
 const PREFIX = 'sass-glob-importer://'
 
 export default function globImporter(rootUrl = '') {
-  rootUrl = resolvePath(rootUrl)
+  rootUrl = resolvePath(process.cwd(), rootUrl)
 
   return {
     canonicalize: async (url = '', options = { fromImport: false, containgUrl: {} }) => {
-      url = join(rootUrl, url).replace(PREFIX, '')
+      url = joinPath(rootUrl, url).replace(PREFIX, '')
 
       return options.fromImport && glob.isDynamicPattern(url) ? new URL(url, PREFIX) : null
     },
