@@ -8,10 +8,10 @@ export default function globImporter(rootUrl = '') {
   rootUrl = resolvePath(process.cwd(), rootUrl)
 
   return {
-    canonicalize: async (url = '') => {
+    canonicalize: async (url = '', options = { fromImport: false, containgUrl: {} }) => {
       url = joinPath(rootUrl, url).replace(PREFIX, '')
 
-      return glob.isDynamicPattern(url) ? new URL(url, PREFIX) : null
+      return options.fromImport && glob.isDynamicPattern(url) ? new URL(url, PREFIX) : null
     },
 
     load: async (canonicalUrl) => {
