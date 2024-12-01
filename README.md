@@ -4,6 +4,11 @@
 Plugins to add globbing support to import statements in various environments like Sass, Webpack and ESBuild.
 > **TODO**: Add support for detecting import calls as opposed to statements.
 
+## Major changes since v2
+
+Since v2, the Sass importer now uses `@use` instead of `@import` for better compatibility with modern Sass.
+Use v1 if you need support for `@import`.
+
 ## Usage
 
 ### For `sass` / `sass-embedded` (with `.scss` syntax)
