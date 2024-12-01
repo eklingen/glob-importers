@@ -1,6 +1,6 @@
 {
   "name": "@eklingen/glob-importers",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Plugins to add globbing support to import statements in various environments like Sass, Webpack and ESBuild.",
   "repository": {
     "type": "git",
