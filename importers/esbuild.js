@@ -1,7 +1,7 @@
-import { glob } from 'tinyglobby'
+import { glob, isDynamicPattern } from 'tinyglobby'
 
 const onResolveHandler = ({ path, namespace, resolveDir, kind }) => {
-  if (resolveDir === '' || namespace !== 'file' || (kind !== 'import-statement' && kind !== 'require-call' && kind !== 'dynamic-import' && kind !== 'require-resolve' && kind !== 'import-rule') || !glob.isDynamicPattern(path)) {
+  if (resolveDir === '' || namespace !== 'file' || (kind !== 'import-statement' && kind !== 'require-call' && kind !== 'dynamic-import' && kind !== 'require-resolve' && kind !== 'import-rule') || !isDynamicPattern(path)) {
     return
   }
 
