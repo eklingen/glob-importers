@@ -6,8 +6,7 @@ Plugins to add globbing support to import statements in various environments lik
 
 ## Major changes since v2
 
-Since v2, the Sass importer now uses `@use` instead of `@import` for better compatibility with modern Sass.
-Use v1 if you need support for `@import`.
+Since v2, the Sass importer now uses `@use` instead of `@import` for better compatibility with modern Sass, also uses `tinyglobby` instead of `fast-glob`. Use v1 if you need support for `@import`. Known issue with v1: The `fast-glob` dependency is incorrectly specified; you need to add it to your project.
 
 ## Usage
 
