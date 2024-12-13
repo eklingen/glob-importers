@@ -1,4 +1,4 @@
-import glob from 'fast-glob'
+import { glob } from 'tinyglobby'
 
 const onResolveHandler = ({ path, namespace, resolveDir, kind }) => {
   if (resolveDir === '' || namespace !== 'file' || (kind !== 'import-statement' && kind !== 'require-call' && kind !== 'dynamic-import' && kind !== 'require-resolve' && kind !== 'import-rule') || !glob.isDynamicPattern(path)) {
@@ -9,8 +9,8 @@ const onResolveHandler = ({ path, namespace, resolveDir, kind }) => {
 }
 
 const onLoadHandler = async args => {
-  const files = (await glob(args.path, { cwd: args.pluginData.resolveDir })).sort().sort((a, b) => a.localeCompare(b))
-  const contents = files.map(module => `import '${module}';\n`).join('')
+  const filepaths = (await glob(args.path, { cwd: args.pluginData.resolveDir })).sort((a, b) => a.localeCompare(b))
+  const contents = filepaths.map(module => `import '${module}';\n`).join('').trim()
 
   return { contents, resolveDir: args.pluginData.resolveDir }
 }

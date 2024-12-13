@@ -92,7 +92,7 @@ import 'components/video/video.js';
 
 ## Dependencies
 
-This package requires ["fast-glob"](https://www.npmjs.com/package/fast-glob).
+This package requires ["tinyglobby"](https://www.npmjs.com/package/tinyglobby).
 
 ---
 

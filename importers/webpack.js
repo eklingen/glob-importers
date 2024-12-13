@@ -1,4 +1,4 @@
-import glob from 'fast-glob'
+import { glob, isDynamicPattern } from 'tinyglobby'
 
 export default function globImporter(source = '') {
   const cwd = this.context
@@ -10,15 +10,16 @@ export default function globImporter(source = '') {
 
     const [match, quote, content] = result
 
-    if (!glob.isDynamicPattern(content)) {
+    if (!isDynamicPattern(content)) {
       return
     }
 
     const pre = result.input.slice(0, result.index)
     const post = result.input.slice(result.index + match.length)
-    const results = [...glob.sync(content, { cwd })].sort((a, b) => a.localeCompare(b))
+    const filepaths = [...glob.sync(content, { cwd })].sort((a, b) => a.localeCompare(b))
+    const contents = filepaths.map(filename => `${pre}${quote}${filename}${quote}${post}`).join('\n').trim()
 
-    return results.map(filename => `${pre}${quote}${filename}${quote}${post}`).join('\n')
+    return contents
   }
 
   function expandLine(line, payload) {
