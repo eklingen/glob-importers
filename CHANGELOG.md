@@ -1,6 +1,7 @@
 
 # Changelog
 
+v2.0.3 - Fixed an older bug where the globbing dependency was incorrectly marked as `devDependency` instead of `dependency`.
 v2.0.2 - Fixed a bug that resulted from the v2.0.1 changes.
 v2.0.1 - Replaced `fast-glob` dependency with `tinyglobby`.
 v2.0.0 - Sass importer now uses `@use` instead of `@import` for better compatibility with modern Sass. Use v1 if you need `@import`.
