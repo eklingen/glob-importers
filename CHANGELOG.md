@@ -1,6 +1,7 @@
 
 # Changelog
 
+v2.1.1 - Fixed a bug where the Sass importer would not correctly resolve paths since the v2.0.1 update.
 v2.1.0 - Feature: ESBuild importer now supports any glob pattern, so long as it has at least one `*` character.
 v2.0.3 - Fixed an older bug where the globbing dependency was incorrectly marked as `devDependency` instead of `dependency`.
 v2.0.2 - Fixed a bug that resulted from the v2.0.1 changes.

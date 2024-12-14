@@ -16,7 +16,7 @@ export default function globImporter(rootUrl = '') {
 
     load: async (canonicalUrl) => {
       const pathname = canonicalUrl.pathname.endsWith('.scss') ? canonicalUrl.pathname : canonicalUrl.pathname + '.scss'
-      const filepaths = [...(await glob(pathname))].sort((a, b) => a.localeCompare(b))
+      const filepaths = [...(await glob(pathname, { cwd: rootUrl }))].sort((a, b) => a.localeCompare(b))
       const contents = filepaths.map(path => `@use '${path.replace(PREFIX, 'file:///')}' as glob_${index++}; `).join('').trim()
 
       return { contents, syntax: 'scss' }
