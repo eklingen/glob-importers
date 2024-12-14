@@ -19,8 +19,8 @@ export default function globImporter() {
   return {
     name: 'esbuild:glob-importer-plugin',
     setup: builder => {
-      builder.onResolve({ filter: /\.((j|t)sx?)$/ }, args => onResolveHandler(args))
-      builder.onLoad({ filter: /\.((j|t)sx?)$/, namespace: 'import-glob' }, args => onLoadHandler(args))
+      builder.onResolve({ filter: /.*\*.*$/ }, args => onResolveHandler(args))
+      builder.onLoad({ filter: /.*\*.*$/, namespace: 'import-glob' }, args => onLoadHandler(args))
     },
   }
 }
