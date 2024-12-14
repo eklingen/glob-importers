@@ -1,7 +1,7 @@
 
 # Changelog
 
-v2.0.4 - Feature: ESBuild importer now supports any glob pattern, so long as it has at least one `*` character.
+v2.1.0 - Feature: ESBuild importer now supports any glob pattern, so long as it has at least one `*` character.
 v2.0.3 - Fixed an older bug where the globbing dependency was incorrectly marked as `devDependency` instead of `dependency`.
 v2.0.2 - Fixed a bug that resulted from the v2.0.1 changes.
 v2.0.1 - Replaced `fast-glob` dependency with `tinyglobby`.
