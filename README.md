@@ -1,6 +1,10 @@
 
 # Glob importers
 
+> This project was originally developed independently and has been used in projects at [Fabrique](https//www.fabrique.nl) and [Q42](https://www.q42.nl).
+> It remains publicly available and can be forked or maintained independently if needed.
+> No guarantees are provided for long-term maintenance.
+
 Plugins to add globbing support to import statements in various environments like Sass, Webpack and ESBuild.
 > **TODO**: Add support for detecting import calls as opposed to statements.
 
